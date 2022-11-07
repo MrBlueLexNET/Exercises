@@ -16,8 +16,7 @@ personalregister. De har endast två krav:
 i konsolen, inget krav på persistent lagring)
 2. Programmet skall kunna skriva ut registret i en konsol
              */
-                
-            int wage = 0;
+             int wage = 0;
             //1. Register
             Console.WriteLine("FirstName:");
             string firstName = Console.ReadLine();
