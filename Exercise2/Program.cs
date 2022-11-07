@@ -117,7 +117,7 @@ namespace Exercise2
                 var totalKostnad = 0;
                 for (int i = 0; i < allPeopleAgeInTheGroup.Length; i++)
                 {
-                    if (allPeopleAgeInTheGroup[i] > 20)
+                    if (allPeopleAgeInTheGroup[i] < 20)
                     { totalKostnad = totalKostnad + 80; }
                     else if (allPeopleAgeInTheGroup[i] > 64)
                     { totalKostnad = totalKostnad + 90; }
