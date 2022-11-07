@@ -4,6 +4,7 @@ using System.Runtime.ConstrainedExecution;
 using System;
 using System.Security.Cryptography;
 using System.Diagnostics.Metrics;
+using System.Text.RegularExpressions;
 
 namespace Exercise2
 {
@@ -124,7 +125,7 @@ namespace Exercise2
                     else if (allPeopleAgeInTheGroup[i] is >= 64 and < 100)
                     { totalKostnad = totalKostnad + 90; }
                     else
-                    { totalKostnad = totalKostnad + 0; }
+                    { totalKostnad = + totalKostnad; }
                 }
 
                 Console.WriteLine("-----------------------------------\n");
@@ -170,10 +171,14 @@ namespace Exercise2
 
                 Console.Write("Anger en mening med minst 3 ord:");
                 string phrase = Console.ReadLine()!;
+
+                phrase = Regex.Replace(phrase, @"\s+", " ").Trim(); // Escape all whitespace and Trim()!
                 string[] words = phrase.Split(' ');
 
                 //Console.WriteLine($"{words.Length} words in text:");
                 Console.WriteLine($"{words[2]} är det tredje ordet!");
+
+                
 
                 /*
                 foreach (var word in words)//9 words in the phrase
