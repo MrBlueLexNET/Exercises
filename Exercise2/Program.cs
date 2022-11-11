@@ -69,11 +69,25 @@ namespace Exercise2
                 try
                 {
                     uint input = UInt16.Parse(inputAge);
+                    //Console.ForegroundColor = ConsoleColor.Green;
                     //Console.WriteLine(input);
+                    
                 }
                 catch (FormatException)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Unable to parse '{inputAge}'");
+                    
+                }
+                catch (Exception ex)//All Exceptions will be catched
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"\n{ex.Message}");
+                   
+                }
+                finally 
+                {
+                    Console.ResetColor();
                 }
 
                 uint age = UInt16.Parse(inputAge);
