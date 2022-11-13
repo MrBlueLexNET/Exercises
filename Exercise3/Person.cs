@@ -29,11 +29,12 @@ namespace Exercise3
         //Private Fields: fName, lName, height, weight
         //private string fName;
         //private string lName;
-        private string fullName;
-        
+        private string fullName = string.Empty;
+
+
         //Protected Fields to be used for classes that are related to Person
-        protected string fName;
-        protected string lName;
+        protected string fName = string.Empty;
+        protected string lName = string.Empty;
 
         protected int age;
         protected double height;
