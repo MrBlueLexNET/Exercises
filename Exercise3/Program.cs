@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Data;
 using System.Diagnostics.Metrics;
 using System.Reflection;
 using System.Xml.Linq;
@@ -98,6 +99,43 @@ namespace Exercise3
 
             Swan sawnWhite = new Swan() { Name = "White", Description = "I'm in a good shape today and", Maried = false };
             Console.WriteLine($"{sawnWhite.Stats()}");
+            //3. Skapa en lista Animals i Program.cs som tar emot djur.
+            List<Animal> Animals = new List<Animal>();
+
+            Dog Boxer = new Dog() { Name = "Boxer", Description = "Boxer är en hundras från Tyskland. Den är en brukshund och sällskapshund av molossertyp. I en undersökning 2012/2013 utnämndes boxern till en av världens tio populäraste hundraser." };
+            Dog BassetHound = new Dog() { Name = "Basset hound" , Description = "Basset hound är en hundras från Storbritannien. Ursprungligen är den en långsamdrivande jakthund av lågbent braquetyp men den är vanligast som sällskapshund." };
+            Horse Mustang = new Horse() { Name = "Mustang" , Description = "Mustang är en hästras som utvecklats naturligt i det vilda i USA. Mustanger är förvildade hästar, i den meningen att de har tillkommit från tama hästar, men sedan förvildats." };
+            Wolf wolf = new Wolfman() { Name = "Bob the wolf", Description = "I'm just a regular wolfman and I can talk()" };
+            Animals.Add(Boxer);
+            Animals.Add(BassetHound);
+            Animals.Add(Mustang);
+            Animals.Add(wolf);
+
+            //7. Gör en check i for-loopen ifall ett djur även är av typen IPerson, om den är det type 
+            //casta till IPerson och anropa dess Talk() metod
+
+            //Typtestning med operatorn typeof
+            // Ref: https://learn.microsoft.com/sv-se/dotnet/csharp/language-reference/operators/type-testing-and-cast#cast-expression
+
+            
+                object b = new Bird();
+                Console.WriteLine(b is Animal);  // output: True
+                Console.WriteLine(b.GetType() == typeof(Animal));  // output: False
+
+                Console.WriteLine(b is Bird);  // output: True
+                Console.WriteLine(b.GetType() == typeof(Bird));  // output: True
+           
+
+            foreach (var animal in Animals)
+            { 
+            Console.WriteLine($"{animal.Name} Beskrivning: {animal.Description}");
+                var o = animal as IPerson;
+                if (o != null)
+                { Console.WriteLine("Found the correct interface to execute the method Wolfman can SPEAK");
+                    Console.WriteLine(o.Talk());
+                }              
+                Console.WriteLine(animal.DoSound());
+            }
 
             Console.ReadLine();
 

@@ -16,6 +16,13 @@ namespace Exercise3
         public string Talk() => $"Wolfam says:";
        
     }
-    public class Wolf
-    { }
+    public class Wolf : Animal
+    {
+        //public string Name { get; set; } = string.Empty;
+
+        public override string DoSound()
+        {
+            return "Hello from Wolf!";
+        }
+    }
 }
