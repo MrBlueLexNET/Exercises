@@ -22,20 +22,6 @@ namespace Exercise5
 
             
 
-
-            
-
-
-
-            ////Filter by [Properties] (no execution) for an int 
-            //var q = garage.Where(p => p.RegNumber  = "aaa111";
-            ////Sort by name (no execution)
-            //q = q.OrderBy(p => p.Name);
-
-            ////Execution
-            //foreach (var item in q)
-            //{ }
-
             /***************************/
             /*GenericGarage*/
             /***************************/

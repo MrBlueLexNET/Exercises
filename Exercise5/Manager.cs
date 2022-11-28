@@ -135,24 +135,7 @@ namespace Exercise5
             Console.ReadKey();
         }
         
-        //private void SeedData()
-        //{
-        //    /***************************/
-        //    /*GenericGarage*/
-        //    /***************************/
-        //    GenericGarage<Car> genericGarageCity = new GenericGarage<Car>("Generic City Garage", 5);
-        //    /***************************/
-        //    /*Generic City Garage*/
-        //    //Vehicle[5]
-        //    /***************************/
-        //    var car01 = new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2);
-        //    //genericGarageCity.vehicles[0] = car01;
                 
-            
-        //}
-
-
-        
     }
 }
 
