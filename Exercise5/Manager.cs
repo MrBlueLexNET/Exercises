@@ -88,6 +88,7 @@ namespace Exercise5
             handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
             handler.AddVehicles( new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
             handler.AddVehicles(new Car("ESM005", "V60", "Volvo", "Pink", 4, 2));
+            handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "White", 55));
 
             handler.DelVehicles("JMY066");
 
