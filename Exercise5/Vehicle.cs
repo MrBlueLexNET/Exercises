@@ -10,9 +10,9 @@ namespace Exercise5
     {
         //Fields  
         //protected string regNumber; //Unique ID [AAA111] || [AAA11A]
-        protected string model; // Model
-        protected string manufacturer; // Manufacturer
-        protected string color; // Color
+        protected string model = string.Empty; // Model
+        protected string manufacturer = string.Empty; // Manufacturer
+        protected string color = string.Empty; // Color
         //private int numOfDoors; // The number of doors => Car class Only
         //private int numOfWheels; // The number of wheels => Car class Only
 

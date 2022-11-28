@@ -17,6 +17,8 @@ namespace Exercise5
         private int numOfDoors; // The number of doors
         private int numOfWheels; // The number of wheels
 
+        //Properties
+        public static int InstanceCount { get; internal set; }
         public int NumOfDoors { get => numOfDoors; set => numOfDoors = value; }
         public int NumOfWheels { get => numOfWheels; set => numOfWheels = value; }
 
