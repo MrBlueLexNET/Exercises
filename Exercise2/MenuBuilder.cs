@@ -40,6 +40,7 @@ namespace Exercise2
         }
 
         public uint Option { get => option; set => option = value; }
+        public string Menulang { get => menulang; set => menulang = value; }
 
         //Konstruktor med parametrar
         //En konstruktor har aldrig någon retur typ och heter samma sak som klassen

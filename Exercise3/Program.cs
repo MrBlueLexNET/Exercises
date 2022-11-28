@@ -1,6 +1,8 @@
 ﻿
 
+using Microsoft.VisualBasic;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Metrics;
 using System.Reflection;
@@ -136,6 +138,27 @@ namespace Exercise3
                 }              
                 Console.WriteLine(animal.DoSound());
             }
+
+//8.Skapa en lista för hundar.
+            List<Dog> Doglist = new List<Dog>();
+            Doglist.Add(Boxer);
+            Doglist.Add(BassetHound);
+            //Doglist.Add(Mustang); 
+
+//9.F: Försök att lägga till en häst i listan av hundar. Varför fungerar inte det?
+
+
+//10.F: Vilken typ måste listan vara för att alla klasser skall kunna lagras tillsammans ?
+//11.Skriv ut samtliga Animals Stats() genom en foreach loop.
+//12.Testa och se så det fungerar.
+//13.F: Förklara vad det är som händer.
+//14.Skriv ut Stats() metoden enbart för alla hundar genom en foreach på
+//Animals.
+//15.Skapa en ny metod med valfritt namn i klassen Dog som endast returnerar en valfri
+//sträng.
+//16.Kommer du åt den metoden från Animals listan ?
+//17.F : Varför inte ?
+//18.Hitta ett sätt att skriva ut din nya metod för dog genom en foreach på Animals.
 
             Console.ReadLine();
 
