@@ -81,7 +81,7 @@ namespace Exercise5
             Console.WriteLine("==========================");
             foreach (var vehicle in garage)
             {
-                Console.WriteLine("Vehicle #: {0}", vehicle.Model);
+                Console.WriteLine("Vehicle type {1}#: {0}", vehicle.Model , vehicle.GetType().Name);
                 Console.WriteLine("RegNumber:  {0}", vehicle.RegNo);
                 Console.WriteLine("---------------------------");
             }

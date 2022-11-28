@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Exercise5
@@ -54,7 +55,7 @@ namespace Exercise5
                         //Selection11();
                         break;
                     case "2":
-                        //Selection2();
+                        Selection2();
                         break;
                     case "3":
                         //Selection3();
@@ -111,30 +112,46 @@ namespace Exercise5
 
         }
 
-        //static void Selection2()
-        //{
-        //    //********************************
-        //    //Menu selection 2:  Add vehicles
-        //    //********************************
-        //    Console.WriteLine("-----------------------------------\n");
-        //    Console.WriteLine("Menu selection 2:  Vehicles\r\n");
-        //    Console.WriteLine("-----------------------------------\n");
+        static void Selection2()
+        {
+            //********************************
+            //Menu selection 2:  Add vehicles
+            //********************************
+            Console.WriteLine("-----------------------------------\n");
+            Console.WriteLine("Menu selection 2:  Vehicles\r\n");
+            Console.WriteLine("-----------------------------------\n");
 
-        //    Console.WriteLine("Unique Id?");
-        //    if (Console.CapsLock)
-        //    {
-        //        var inputId = Console.ReadLine()!;
+            Console.WriteLine("Unique RegNo:");
+            
+                var inputRegNo = Console.ReadLine()!.ToUpper();
+                string regNo = inputRegNo;
 
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Capital letters for Ids");
-        //    }
-
-        //    Console.ReadKey();
-        //}
-        
+         //Console.WriteLine("Capital letters for Ids");
                 
+        Console.WriteLine("Model:");
+        var inputModel = Console.ReadLine()!;
+        string model = inputModel;
+       
+        Console.WriteLine("Manufacturer:");
+        var inputManufacturer = Console.ReadLine()!;
+        string manufacturer = inputManufacturer;
+
+        Console.WriteLine("Color:");
+        var inputColor = Console.ReadLine()!;
+        string color = inputColor;
+
+        Console.WriteLine("Number of doors:");
+        var inputNumOfDoors = Console.ReadLine()!;
+        int numOfDoors = UInt16.Parse(inputNumOfDoors);
+            
+        Console.WriteLine("Number of wheels:");
+        var inputNumOfWheels = Console.ReadLine()!;
+        int numOfWheels = UInt16.Parse(inputNumOfWheels);
+
+        Console.WriteLine($"Create vehicule: {regNo}");
+
+        }
+
     }
 }
 
