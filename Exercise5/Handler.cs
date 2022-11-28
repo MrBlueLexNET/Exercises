@@ -15,7 +15,9 @@ namespace Exercise5
     public class Handler /*: Garage<Vehicle>*/
     {
         private int capacity; // Capacity
-       
+
+        private Garage<Vehicle> garage;
+
         protected int Capacity {
 
             get
@@ -32,26 +34,14 @@ namespace Exercise5
             }
         }
 
-        private Garage<Vehicle> garage;
+        
 
         public Handler(int capacity)
         {
             garage = new Garage<Vehicle>(capacity);
         }
 
-        public void ShowVehicles()
-        {
-            Console.WriteLine($"Vehicles in garage:");
-            Console.WriteLine("==========================");
-
-            //foreach (var Item in Garage<Vehicle>)
-            //{
-            //    Console.WriteLine("Vehicle #: {0}", Item.Model);
-            //    Console.WriteLine("RegNumber:  {0}", Item.RegNo);
-            //    Console.WriteLine("---------------------------");
-            //}
-        }
-
+        
         ////Filter by [Properties] (no execution) for an int 
         //var q = garage.Where(p => p.RegNumber  = "aaa111";
         ////Sort by name (no execution)
@@ -87,9 +77,13 @@ namespace Exercise5
 
         internal void PrintAllVehicles()
         {
-            foreach(var vehicle in garage)
+            Console.WriteLine($"Vehicles in garage:");
+            Console.WriteLine("==========================");
+            foreach (var vehicle in garage)
             {
-                //TODO
+                Console.WriteLine("Vehicle #: {0}", vehicle.Model);
+                Console.WriteLine("RegNumber:  {0}", vehicle.RegNo);
+                Console.WriteLine("---------------------------");
             }
 
             //var test3 = garage.Where(v => v.Model == "V90").ToList();

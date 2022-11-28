@@ -29,9 +29,11 @@ namespace Exercise5
                 Console.WriteLine("-----------------------------------\n");
                 Console.WriteLine("[0]Quit:");
                 Console.WriteLine("[1]Putting a capacity (number of parking spaces) when instantiating a new garage [Create]:||[11]Grupp?");
+                
                 Console.WriteLine("[2]Populate the garage with a number of vehicles from the start [Add]:");
                 Console.WriteLine("[3]Add[+] and Remove[-] vehicles from the garage:");
                 Console.WriteLine("[4]List all parked vehicles:");
+
                 Console.WriteLine("[5]List vehicle types and how many of each are in the garage:");
                 Console.WriteLine("-----------------------------------\n");
                 Console.WriteLine("[6]Find a specific vehicle via the registration number:");
@@ -47,16 +49,15 @@ namespace Exercise5
                         break;
                     case "1":
                         Selection1();
-                        //Menyval11();
                         break;
                     case "11":
-                        //Menyval11();
+                        //Selection11();
                         break;
                     case "2":
-                        Selection2();
+                        //Selection2();
                         break;
                     case "3":
-                        //Menyval3();
+                        //Selection3();
                         break;
 
                     default:
@@ -91,11 +92,7 @@ namespace Exercise5
             handler.DelVehicles("JMY066");
 
             handler.PrintAllVehicles();
-
-            //foreach (var vehicle in handler)
-            //{
-            //    Console.WriteLine(vehicle.ToString());
-            //}
+ 
 
             //LINQ ex.
 
@@ -109,37 +106,32 @@ namespace Exercise5
             //Console.WriteLine(test3.Count);
             //Console.WriteLine(test3);
 
-            handler.ShowVehicles();
-
-
             Console.ReadKey();
-
 
         }
 
-        static void Selection2()
-        {
-            //********************************
-            //Menu selection 2:  Add vehicles
-            //********************************
-            Console.WriteLine("-----------------------------------\n");
-            Console.WriteLine("Menu selection 2:  Vehicles\r\n");
-            Console.WriteLine("-----------------------------------\n");
+        //static void Selection2()
+        //{
+        //    //********************************
+        //    //Menu selection 2:  Add vehicles
+        //    //********************************
+        //    Console.WriteLine("-----------------------------------\n");
+        //    Console.WriteLine("Menu selection 2:  Vehicles\r\n");
+        //    Console.WriteLine("-----------------------------------\n");
 
-            Console.WriteLine("Unique Id?");
-            if (Console.CapsLock)
-            {
-                var inputId = Console.ReadLine()!;
+        //    Console.WriteLine("Unique Id?");
+        //    if (Console.CapsLock)
+        //    {
+        //        var inputId = Console.ReadLine()!;
 
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Capital letters for Ids");
+        //    }
 
-            }
-            else
-            {
-                Console.WriteLine("Capital letters for Ids");
-            }
-
-            Console.ReadKey();
-        }
+        //    Console.ReadKey();
+        //}
         
                 
     }
