@@ -83,29 +83,33 @@ namespace Exercise5
             /***************************/
             /*Handler*/
             /***************************/
-            var garage = new Handler(capacity);
-            garage.Park(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
-            garage.Park( new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
-            garage.Park(new Car("ESM005", "V60", "Volvo", "Pink", 4, 2));
+            var handler = new Handler(capacity);
+            handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
+            handler.AddVehicles( new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
+            handler.AddVehicles(new Car("ESM005", "V60", "Volvo", "Pink", 4, 2));
 
-            garage.Unpark("JMY066");
+            handler.DelVehicles("JMY066");
 
-            foreach (var vehicle in garage)
-            {
-                Console.WriteLine(vehicle.ToString());
-            }
+            handler.PrintAllVehicles();
+
+            //foreach (var vehicle in handler)
+            //{
+            //    Console.WriteLine(vehicle.ToString());
+            //}
 
             //LINQ ex.
-            var test1 = garage.Any();
-            var test2 = garage.Any(v => v.RegNo == "LEM008");
-            var test3 = garage.Where(v => v.Model == "V90").ToList();
+
+            var array = new Vehicle[10];
+            var test1 = array.Any(v => v is not null);
+            //var test2 = handler.Any(v => v.RegNo == "LEM008");
+            //var test3 = handler.Where(v => v.Model == "V90").ToList();
 
             Console.WriteLine(test1);
-            Console.WriteLine(test2);
-            Console.WriteLine(test3.Count);
-            Console.WriteLine(test3);
+            //Console.WriteLine(test2);
+            //Console.WriteLine(test3.Count);
+            //Console.WriteLine(test3);
 
-            garage.ShowVehicles();
+            handler.ShowVehicles();
 
 
             Console.ReadKey();
@@ -126,6 +130,8 @@ namespace Exercise5
             if (Console.CapsLock)
             {
                 var inputId = Console.ReadLine()!;
+
+
             }
             else
             {

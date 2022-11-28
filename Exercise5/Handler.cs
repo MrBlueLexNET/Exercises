@@ -12,7 +12,7 @@ namespace Exercise5
     /// Only the Handler knows about the class Garage
     /// Most of the methods related to Garage will be define in this class Should be named GarageHandler
     /// </summary>
-    public class Handler : Garage<Vehicle>
+    public class Handler /*: Garage<Vehicle>*/
     {
         private int capacity; // Capacity
        
@@ -32,11 +32,11 @@ namespace Exercise5
             }
         }
 
+        private Garage<Vehicle> garage;
 
-
-        public Handler(int capacity) : base(capacity)
+        public Handler(int capacity)
         {
-            var garage = new Garage<Vehicle>(capacity);
+            garage = new Garage<Vehicle>(capacity);
         }
 
         public void ShowVehicles()
@@ -61,5 +61,38 @@ namespace Exercise5
         //foreach (var item in q)
         //{ }
 
+        //********************************
+        //Method For Menu selection 2:  Add vehicles without any garage initialized
+        //********************************
+        public bool AddVehiclesNoGarage()
+        {
+            //ToDo:
+            return true;
+        }
+        //********************************
+        //Methods For Menu selection 2: Add[+] and Remove[-] vehicles from the garage:
+        //********************************
+        public bool AddVehicles(Vehicle newVehicle)
+        {
+            //ToDo:
+            garage.Park(newVehicle);
+            return true;
+        }
+        public bool DelVehicles(string regnr)
+        {
+            //ToDo:
+            //UnPark(new <Vehicle>)
+            return true;
+        }
+
+        internal void PrintAllVehicles()
+        {
+            foreach(var vehicle in garage)
+            {
+                //TODO
+            }
+
+            //var test3 = garage.Where(v => v.Model == "V90").ToList();
+        }
     }
 }
