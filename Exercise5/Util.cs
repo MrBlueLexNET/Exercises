@@ -49,7 +49,6 @@ namespace Exercise5 //.Helpers
 
                     //Anropa AskForString så vi vet att vi faktiskt får en string tillbaks
                     //Fortsätter tills vi har fått en string som vi kan Parsa till en uint
-                    //Oftast använder man sig av en int här kör jag uint mer för demo.
                     if (uint.TryParse(input, out uint answer))
                     {
                         return answer;
@@ -58,6 +57,23 @@ namespace Exercise5 //.Helpers
                 } while (true);
 
             }
+
+        public static int AskForInt(string prompt, IUI ui)
+        {
+            do
+            {
+                string input = AskForString(prompt, ui);
+
+                //Anropa AskForString så vi vet att vi faktiskt får en string tillbaks
+                //Fortsätter tills vi har fått en string som vi kan Parsa till en int
+                if (int.TryParse(input, out int answer))
+                {
+                    return answer;
+                }
+
+            } while (true);
+
         }
+    }
  
 }

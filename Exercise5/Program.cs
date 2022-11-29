@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Security.Cryptography;
 
 namespace Exercise5
@@ -7,7 +8,7 @@ namespace Exercise5
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello, World!");
+            
             // Util-klass for input validation
             /* https://github.com/Lexicon-Net/EmployeeList/blob/master/EmployeeList.Helpers/Util.cs*/
             //
@@ -18,50 +19,20 @@ namespace Exercise5
 
             //Util util = new Util();
             //Util.AskForString("Hej!", new UI());
+           
+            //Initialisation:
+            //ConsoleUI + Hander  
+            IUI ui = new ConsoleUI();
+            Handler handler = new Handler(1); //TODO: Default Constructor shouldn't take any parameter.
+            //Manager
+            Manager manager = new Manager(ui, handler);
+            manager.ShowMenu();
             
-
             
-
-            /***************************/
-            /*GenericGarage*/
-            /***************************/
-            int n = 10;
-            Vehicle[] arr = new Vehicle[n]; 
-
-            for (int i = 0; i < n; i++)
-            {
-
-                arr[i] = new Vehicle();
-            }
-
-            //GenericGarage<Vehicle> genericGarageCity = new GenericGarage<Vehicle>("Generic City Garage", 5);
-            //genericGarageCity.RegisterVehicles(new[] { new Car("AAA111", "V40", "Volvo", "Red", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("CCC111", "V40" , "Volvo", "Black", 2, 4 ) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("AAA111", "V40", "Volvo", "Red", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("CCC111", "V40", "Volvo", "Black", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("AAA111", "V40", "Volvo", "Red", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("CCC111", "V40", "Volvo", "Black", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("AAA111", "V40", "Volvo", "Red", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("CCC111", "V40", "Volvo", "Black", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("AAA111", "V40", "Volvo", "Red", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("CCC111", "V40", "Volvo", "Black", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("AAA111", "V40", "Volvo", "Red", 2, 4) });
-            //genericGarageCity.RegisterVehicles(new[] { new Car("CCC111", "V40", "Volvo", "Black", 2, 4) });
-
-            //Console.WriteLine("==========================");
-            //genericGarageCity.ShowVehicles(ref Vehicles);
-            //Console.WriteLine("==========================");
-
-            //Console.WriteLine($"Number of vehicle in garage: {genericGarageCity.vehicles[1]}");//vehicles System.Array[] null Error throwed
-
-            
-            var man = new Manager();
-            man.SayHiManager();
-            man.ShowMenu();
-
-
-
-            Console.ReadKey();
+            //var man = new Manager();
+            //man.SayHiManager();
+            //man.ShowMenu();
+            //Console.ReadKey();
 
         }
     }

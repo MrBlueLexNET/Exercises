@@ -10,7 +10,15 @@ namespace Exercise5
 {
     public class Manager
     {
+        private readonly IUI ui;//TEST01
+        private readonly Handler handler;
 
+        public Manager(IUI ui, Handler handler)//TEST01 CONSTRUCTOR
+        {
+            this.ui = ui;
+            this.handler = handler;
+
+        }
         public void SayHiManager()
         {
             Console.WriteLine("HI from the Manager class");
@@ -69,6 +77,25 @@ namespace Exercise5
             } while (true);
         }
 
+        private void AddVehicule()//TEST01
+        {
+
+            string regNo = Util.AskForString("RegNo", ui);
+            string model = Util.AskForString("Model", ui);
+            string manufacturer = Util.AskForString("Manufacturer", ui);
+            string color = Util.AskForString("Color", ui);
+
+
+            int numOfDoors = Util.AskForInt("NumOfDoors", ui);
+            int numOfWheels = Util.AskForInt("NumOfWheels", ui);
+
+
+
+            var tempHandler = new Handler(1);
+           tempHandler.AddVehicles(new Car(regNo, model, manufacturer, color, numOfDoors, numOfWheels));
+
+
+        }
         static void Selection1()
         {
             //********************************
@@ -114,12 +141,12 @@ namespace Exercise5
             
             //LINQ ex.
 
-            var array = new Vehicle[10];
-            var test1 = array.Any(v => v is not null);
+            //var array = new Vehicle[10];
+            //var test1 = array.Any(v => v is not null);
             //var test2 = handler.Any(v => v.RegNo == "LEM008");
             //var test3 = handler.Where(v => v.Model == "V90").ToList();
 
-            Console.WriteLine(test1);
+            //Console.WriteLine(test1);
             //Console.WriteLine(test2);
             //Console.WriteLine(test3.Count);
             //Console.WriteLine(test3);
