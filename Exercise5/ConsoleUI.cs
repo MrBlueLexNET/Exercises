@@ -13,6 +13,11 @@ namespace Exercise5
             return Console.ReadLine()!;
         }
 
+        public string GetInputToUpper()
+        {
+            return Console.ReadLine()!.ToUpper();
+        }
+
         public void Print(string message)
         {
             Console.WriteLine(message);
@@ -23,6 +28,11 @@ namespace Exercise5
     {
         public string SetInput { private get; set; } = "1";
         public string GetInput()
+        {
+            return SetInput;
+        }
+
+        public string GetInputToUpper()
         {
             return SetInput;
         }

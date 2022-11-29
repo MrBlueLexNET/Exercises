@@ -132,10 +132,8 @@ namespace Exercise5
             Console.WriteLine("==========================");
             foreach (var item in vehiculeTypes)
             {
-
                 Console.WriteLine("Vehicle type {0}#: {1}", item.Types, item.Count);
                 Console.WriteLine("---------------------------");
-
             }
         }
 
@@ -161,11 +159,9 @@ namespace Exercise5
             Console.WriteLine("==========================");
             foreach (var item in result)
             {
-
                     //item.GetType().GetProperties().Any()//True
                     Console.WriteLine($"Properties found for Model: {item.Model} with RegNo: {item.RegNo}");
                     Console.WriteLine("---------------------------");
-               
                     //else
                     //Console.WriteLine($"No vehicule found");
                     //Console.WriteLine("---------------------------");

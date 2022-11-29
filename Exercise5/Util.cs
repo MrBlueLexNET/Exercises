@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Exercise5 //.Helpers 
@@ -41,7 +42,38 @@ namespace Exercise5 //.Helpers
                 return answer;
             }
 
-            public static uint AskForUInt(string prompt, IUI ui)
+        public static string AskForStringRegNo(string prompt, IUI ui)
+        {
+            string answer;
+            bool success = false;
+
+
+            //loopa tills användaren har skrivit in något
+            do
+            {
+                ui.Print($"{prompt}: ");
+                answer = ui.GetInputToUpper()!;
+
+                if (string.IsNullOrWhiteSpace(answer))
+                {
+                    ui.Print($"You must enter a valid {prompt}, wrong lenght.");
+                }
+                if (!Regex.Match(answer, "^[A-Z]{3}[0-9]{2}[A-Z-0-9]{1}").Success)
+                {
+                    ui.Print($"You must enter a valid pattern AAA111 or AAA11A {prompt}");
+                }
+
+                else
+                {
+                    success = true;
+                }
+
+            } while (!success);
+
+            return answer;
+        }
+
+        public static uint AskForUInt(string prompt, IUI ui)
             {
                 do
                 {

@@ -28,11 +28,12 @@ namespace Exercise5
             /*Manufacturer = manufacturer;*///private in the base class
             NumOfDoors = numOfDoors;
             NumOfWheels = numOfWheels;
+            InstanceCount += 1;
         }
 
         public override string ToString()
         {
-            return $"{GetType().Name} RegNumber: {RegNo} Model: {Model} NumOfDoors: {NumOfDoors} NumOfWheels: {NumOfWheels} ";
+            return $"Type:{GetType().Name} RegNumber: {RegNo} Model: {Model} NumOfDoors: {NumOfDoors} NumOfWheels: {NumOfWheels} InstanceCount: {InstanceCount}";
         }
     }
 }

@@ -13,7 +13,12 @@ namespace Exercise5
                 return Console.ReadLine()!;
             }
 
-            public void Print(string message)
+        public string GetInputToUpper()
+        {
+            return Console.ReadLine()!.ToUpper();
+        }
+
+        public void Print(string message)
             {
                 Console.WriteLine(message);
             }
