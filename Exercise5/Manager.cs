@@ -39,12 +39,10 @@ namespace Exercise5
                 Console.WriteLine("Menu selection\n\r");
                 Console.WriteLine("-----------------------------------\n");
                 Console.WriteLine("[0]Quit:");
-                Console.WriteLine("[1]Putting a capacity (number of parking spaces) when instantiating a new garage [Create]:||[11]Grupp?");
-                
+                Console.WriteLine("[1]Putting a capacity (number of parking spaces) when instantiating a new garage [Create]");
                 Console.WriteLine("[2]Populate the garage with a number of vehicles from the start [Add]:");
                 Console.WriteLine("[3]Add[+] and Remove[-] vehicles from the garage:");
                 Console.WriteLine("[4]List all parked vehicles:");
-
                 Console.WriteLine("[5]List vehicle types and how many of each are in the garage:");
                 Console.WriteLine("-----------------------------------\n");
                 Console.WriteLine("[6]Find a specific vehicle via the registration number:");
@@ -137,12 +135,11 @@ namespace Exercise5
                 Console.WriteLine("==========================");
             }
             //********************************
-            //Menu selection 1:  Add Vehicles
+            //Menu selection 1:1  Add Vehicles
             //********************************
             //Console.Clear();
             //1. Select Type based on class names
-            //Console.WriteLine("Vehicule type?");
-            Console.WriteLine("Vehicule type choose:");
+            Console.WriteLine("Select vehicule type:");
             Console.WriteLine("[1]Car | [2]Bus | [2]Airplane");
             for (int i = 0; i < capacity; i++)
                 
@@ -172,16 +169,17 @@ namespace Exercise5
                 }
             }
 
-            //AddVehicles Method for SeedData method
-            //handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
-            //handler.AddVehicles(new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
-            //handler.AddVehicles(new Car("ESM005", "V60", "Volvo", "Pink", 4, 2));
-            //handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "White", 55));
-            //handler.AddVehicles(new Car("BSM005", "V90", "Volvo", "White", 4, 2));
-            //handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "Yellow", 55));
-
+            //********************************
+            //Menu selection 2:2  Remove Vehicles
+            //********************************
+            //Console.Clear();
+            //1. RegNo (Id) to remove
+            string regNo = Util.AskForStringRegNo("RegNo", ui);
             //DelVehicles Method
-            //handler.DelVehicles("JMY066");
+            handler.DelVehicles(regNo);
+
+           //DelVehicles Method
+           //handler.DelVehicles("JMY066");
 
             //PrintAllVehicles Method
             handler.PrintAllVehicles();
@@ -193,18 +191,18 @@ namespace Exercise5
             handler.PrintVehiclesTypeCount();
 
             //FindVehiculeByRegNo Method with 1 parameter
-            handler.FindVehiculeByRegNo("BSM005");
+            string Id = Util.AskForStringRegNo("RegNo", ui);
+            handler.FindVehiculeByRegNo(Id);
 
             //SearchVehiculeAllProperties Method with 1 parameter
-            handler.SearchVehiculeAllProperties("V");
+            string searchprop = Util.AskForString("Search for properties", ui);
+            handler.SearchVehiculeAllProperties(searchprop);
             
             //LINQ ex.
-
             //var array = new Vehicle[10];
             //var test1 = array.Any(v => v is not null);
             //var test2 = handler.Any(v => v.RegNo == "LEM008");
             //var test3 = handler.Where(v => v.Model == "V90").ToList();
-
             //Console.WriteLine(test1);
             //Console.WriteLine(test2);
             //Console.WriteLine(test3.Count);
@@ -214,7 +212,13 @@ namespace Exercise5
             Console.Clear();
 
         }
-
+        //AddVehicles Method for SeedData method
+        //handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
+        //handler.AddVehicles(new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
+        //handler.AddVehicles(new Car("ESM005", "V60", "Volvo", "Pink", 4, 2));
+        //handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "White", 55));
+        //handler.AddVehicles(new Car("BSM005", "V90", "Volvo", "White", 4, 2));
+        //handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "Yellow", 55));
 
     }
 }
