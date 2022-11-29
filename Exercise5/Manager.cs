@@ -106,9 +106,12 @@ namespace Exercise5
             //PrintVehiclesTypeCount Method
             handler.PrintVehiclesTypeCount();
 
-            //FindVehiculeByRegNo Method with 1 Argument
+            //FindVehiculeByRegNo Method with 1 parameter
             handler.FindVehiculeByRegNo("LEM008");
 
+            //SearchVehiculeAllProperties Method with 1 parameter
+            handler.SearchVehiculeAllProperties("V");
+            
             //LINQ ex.
 
             var array = new Vehicle[10];

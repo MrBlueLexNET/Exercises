@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -147,6 +148,27 @@ namespace Exercise5
             foreach (var item in result)
             {
                 Console.WriteLine($"Found Model: {item.Model} with RegNo: {item.RegNo}");
+                Console.WriteLine("---------------------------");
+            }
+        }
+
+        internal void SearchVehiculeAllProperties(string searchParam)
+        {
+            var SearchParam = searchParam;
+            var result = garage.Where(v => v.GetType().GetProperties().Any(p => p.GetValue(v, null) != null && p.GetValue(v, null).ToString().Contains(SearchParam)));
+            //Execution
+            Console.WriteLine($"Vehicles in garage: with {SearchParam}");
+            Console.WriteLine("==========================");
+            foreach (var item in result)
+            {
+
+                    //item.GetType().GetProperties().Any()//True
+                    Console.WriteLine($"Properties found for Model: {item.Model} with RegNo: {item.RegNo}");
+                    Console.WriteLine("---------------------------");
+               
+                    //else
+                    //Console.WriteLine($"No vehicule found");
+                    //Console.WriteLine("---------------------------");
             }
         }
 
