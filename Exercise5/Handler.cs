@@ -72,6 +72,7 @@ namespace Exercise5
         {
             //ToDo:
             //UnPark(new <Vehicle>)
+            garage.Unpark(regnr);
             return true;
         }
 
@@ -86,7 +87,68 @@ namespace Exercise5
                 Console.WriteLine("---------------------------");
             }
 
-            //var test3 = garage.Where(v => v.Model == "V90").ToList();
+           
         }
+
+        internal void PrintAllVehiclesGroupByType()
+        {
+            //No Execution
+            var q = garage.Where(p => p.RegNo  == "BSM005");
+            q = q.OrderBy(p => p.GetType().Name);
+
+            //Execution
+            Console.WriteLine($"Vehicles in garage: OrderByType");
+            Console.WriteLine("==========================");
+            foreach (var item in q)
+            {
+                
+                Console.WriteLine("Vehicle type {1}#: {0}", item.Model, item.GetType().Name);
+                Console.WriteLine("RegNumber:  {0}", item.RegNo);
+                Console.WriteLine("---------------------------");
+
+            }
+        }
+
+        internal void PrintVehiclesTypeCount()
+        {
+            //var q = garage.Where(p => p.GetType().Name == "Bus");
+            ////Sort by name (no execution)
+            ////q = q.OrderBy(p => p.GetType().Name);
+            //q = q.GroupBy(p => p.GetType().Name == );
+
+
+            var vehiculeTypes =
+            from vehicle in garage
+            group vehicle by vehicle.GetType().Name into vehiculeGroup
+            select new
+            {
+                Types = vehiculeGroup.Key,
+                Count = vehiculeGroup.Count(),
+            };
+
+            //Execution
+            Console.WriteLine($"Vehicles in garage: TypeCount");
+            Console.WriteLine("==========================");
+            foreach (var item in vehiculeTypes)
+            {
+
+                Console.WriteLine("Vehicle type {0}#: {1}", item.Types, item.Count);
+                Console.WriteLine("---------------------------");
+
+            }
+        }
+
+        internal void FindVehiculeByRegNo(string regNo) 
+        {
+            var RegNo = regNo;
+            //var result = garage.Where(v => v.RegNo == RegNo).ToList();
+            var result = garage.Where(v => v.RegNo == RegNo);
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"Found Model: {item.Model} with RegNo: {item.RegNo}");
+            }
+        }
+
     }
 }

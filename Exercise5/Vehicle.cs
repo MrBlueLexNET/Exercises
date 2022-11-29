@@ -9,7 +9,7 @@ namespace Exercise5
     public class Vehicle : AbstractVehicle
     {
         //Fields  
-        //protected string regNumber; //Unique ID [AAA111] || [AAA11A]
+        protected string regNo = string.Empty; //Unique ID [AAA111] || [AAA11A]
         protected string model = string.Empty; // Model
         protected string manufacturer = string.Empty; // Manufacturer
         protected string color = string.Empty; // Color

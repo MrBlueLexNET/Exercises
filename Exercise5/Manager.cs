@@ -17,7 +17,7 @@ namespace Exercise5
             Console.Clear();
         }
         
-        internal void ShowMenu()
+        public void ShowMenu()
         {
             //TODO seed Garage instance with Objects
             //SeedData();
@@ -86,15 +86,28 @@ namespace Exercise5
             /*Handler*/
             /***************************/
             var handler = new Handler(capacity);
+            //AddVehicles Method
             handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
-            handler.AddVehicles( new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
+            handler.AddVehicles(new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
             handler.AddVehicles(new Car("ESM005", "V60", "Volvo", "Pink", 4, 2));
             handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "White", 55));
+            handler.AddVehicles(new Car("BSM005", "V90", "Volvo", "White", 4, 2));
+            handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "Yellow", 55));
 
+            //DelVehicles Method
             handler.DelVehicles("JMY066");
 
+            //PrintAllVehicles Method
             handler.PrintAllVehicles();
- 
+
+            //PrintAllVehiclesGroupByType Method
+            handler.PrintAllVehiclesGroupByType();
+
+            //PrintVehiclesTypeCount Method
+            handler.PrintVehiclesTypeCount();
+
+            //FindVehiculeByRegNo Method with 1 Argument
+            handler.FindVehiculeByRegNo("LEM008");
 
             //LINQ ex.
 
@@ -121,34 +134,36 @@ namespace Exercise5
             Console.WriteLine("Menu selection 2:  Vehicles\r\n");
             Console.WriteLine("-----------------------------------\n");
 
-            Console.WriteLine("Unique RegNo:");
+                Console.WriteLine("Unique RegNo:");
             
                 var inputRegNo = Console.ReadLine()!.ToUpper();
                 string regNo = inputRegNo;
 
-         //Console.WriteLine("Capital letters for Ids");
+                //Console.WriteLine("Capital letters for Ids");
                 
-        Console.WriteLine("Model:");
-        var inputModel = Console.ReadLine()!;
-        string model = inputModel;
+                Console.WriteLine("Model:");
+                var inputModel = Console.ReadLine()!;
+                string model = inputModel;
        
-        Console.WriteLine("Manufacturer:");
-        var inputManufacturer = Console.ReadLine()!;
-        string manufacturer = inputManufacturer;
+                Console.WriteLine("Manufacturer:");
+                var inputManufacturer = Console.ReadLine()!;
+                string manufacturer = inputManufacturer;
 
-        Console.WriteLine("Color:");
-        var inputColor = Console.ReadLine()!;
-        string color = inputColor;
+                Console.WriteLine("Color:");
+                var inputColor = Console.ReadLine()!;
+                string color = inputColor;
 
-        Console.WriteLine("Number of doors:");
-        var inputNumOfDoors = Console.ReadLine()!;
-        int numOfDoors = UInt16.Parse(inputNumOfDoors);
+                Console.WriteLine("Number of doors:");
+                var inputNumOfDoors = Console.ReadLine()!;
+                int numOfDoors = UInt16.Parse(inputNumOfDoors);
             
-        Console.WriteLine("Number of wheels:");
-        var inputNumOfWheels = Console.ReadLine()!;
-        int numOfWheels = UInt16.Parse(inputNumOfWheels);
+                Console.WriteLine("Number of wheels:");
+                var inputNumOfWheels = Console.ReadLine()!;
+                int numOfWheels = UInt16.Parse(inputNumOfWheels);
 
-        Console.WriteLine($"Create vehicule: {regNo}");
+                Console.WriteLine($"Create vehicule: {regNo}");
+                
+                
 
         }
 
