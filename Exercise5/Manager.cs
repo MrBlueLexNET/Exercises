@@ -142,7 +142,7 @@ namespace Exercise5
             Console.WriteLine("Select vehicule type:");
             Console.WriteLine("[1]Car | [2]Bus | [2]Airplane");
             for (int i = 0; i < capacity; i++)
-                
+               
             {
                 int type = Util.AskForInt("Type", ui);
                 switch (type)
@@ -151,14 +151,18 @@ namespace Exercise5
                     Console.Clear();
                     break;
                 case 1:
+                    //<T> Car
                     handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
                     Console.WriteLine("New Car created");
                     break;
                 case 2:
+                    //<T> Bus
                     handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "White", 55));
+
                     Console.WriteLine("New Bus created");
                     break;
                 case 3:
+                    //<T> Airplane
                     //AddVehicule(string handler, srting type);
                     break;
 
