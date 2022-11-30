@@ -112,12 +112,7 @@ namespace Exercise5
 
         internal void PrintVehiclesTypeCount()
         {
-            //var q = garage.Where(p => p.GetType().Name == "Bus");
-            ////Sort by name (no execution)
-            ////q = q.OrderBy(p => p.GetType().Name);
-            //q = q.GroupBy(p => p.GetType().Name == );
-
-
+            
             var vehiculeTypes =
             from vehicle in garage
             group vehicle by vehicle.GetType().Name into vehiculeGroup

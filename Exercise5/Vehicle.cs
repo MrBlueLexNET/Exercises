@@ -17,9 +17,10 @@ namespace Exercise5
         //private int numOfWheels; // The number of wheels => Car class Only
 
         public virtual string Model { get => model; set => model = value; }
-        // public virtual string RegNumber { get; }
 
-        public string RegNo { get; }
+        //public string RegNo { get; }
+        public virtual string RegNo { get => regNo; set => regNo = value; }
+
         public virtual string Manufacturer { get => manufacturer; set => manufacturer = value; }
         public virtual string Color { get => color; set => color = value; }
 
