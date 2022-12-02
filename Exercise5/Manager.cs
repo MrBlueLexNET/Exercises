@@ -23,11 +23,11 @@ namespace Exercise5
         }
         //public void SayHiManager()
         //{
-        //    Console.WriteLine("HI from the Manager class");
-        //    Console.Clear();
+        // Console.WriteLine("HI from the Manager class");
+        // Console.Clear();
         //}
         
-        public void ShowMenu()
+        public void ShowMenu()//public
         {
             //TODO seed Garage instance with Objects
             //SeedData();
@@ -55,6 +55,7 @@ namespace Exercise5
                         break;
                     case "2":
                         SeedData();
+                        ShowSubMenu();
                         break;
                     default:
                         Console.WriteLine("Wrong input");
@@ -295,9 +296,10 @@ namespace Exercise5
             string searchprop = Util.AskForString("Search for properties", ui);
             handler.SearchVehiculeAllProperties(searchprop);
         }
-        private void SeedData()
+
+        public void SeedData()
         {
-            var handler = new Handler(8);
+            handler.NewGarage(8);
             //AddVehicles Method for SeedData method
             handler.AddVehicles(new Car("JMY066", "V50", "Volvo", "Flamigo Red", 4, 2));
             handler.AddVehicles(new Car("LEM008", "V90", "Volvo", "Black", 4, 2));
@@ -307,9 +309,12 @@ namespace Exercise5
             handler.AddVehicles(new Bus("BSM005", "B55", "Volvo", "Yellow", 55));
             handler.AddVehicles(new Airplane("APP001", "B-52", "Boeing", "Grey", 8));
             handler.AddVehicles(new Bus("BSG005", "Citywide Low Entry gas", "Scania", "White", 55));
+
             //Demo start
-            ShowSubMenu();
+            //ShowSubMenu();
+            //return handler; 
         }
+
     }
 }
 

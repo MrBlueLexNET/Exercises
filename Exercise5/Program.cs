@@ -21,7 +21,7 @@ namespace Exercise5
             //Util.AskForString("Hej!", new UI());
            
             //Initialisation:
-            //ConsoleUI + Hander  
+            //ConsoleUI + Handler  
             IUI ui = new ConsoleUI();
             Handler handler = new Handler(1); //TODO: Default Constructor shouldn't take any parameter.
             //Manager
